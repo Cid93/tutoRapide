@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 @Component({
   selector: 'page-todo',
@@ -7,11 +8,25 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class TodoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private camera: Camera) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TodoPage');
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+    
+    this.camera.getPicture(options).then(imageData => {
+     // imageData is either a base64 encoded string or a file URI
+     // If it's base64:
+     let base64Image = 'data:image/jpeg;base64,' + imageData;
+     console.debug(base64Image);
+    }, err => {
+     // Handle error
+     console.error(err);
+    });
   }
-
 }
