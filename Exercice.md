@@ -1,9 +1,9 @@
-Exercice 1
+Exercice 2
 ==
 
-Démarrer et tester son environnement
+Utiliser le cli
 -
 
-	* Installer un environnement
-	* Créer un nouveau projet Ionic
-	* Lancer l'application vide sur un device 
+    * Lancer un serve pour voir les résultats en live
+    * Créer une page
+    * Lier cette page au menu avec le fichier .module.ts puis sans le fichier
