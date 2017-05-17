@@ -1,9 +1,8 @@
-Exercice 2
+Exercice 3
 ==
 
-Utiliser le cli
+Importer et utiliser un plugin
 -
 
-    * Lancer un serve pour voir les résultats en live
-    * Créer une page
-    * Lier cette page au menu avec le fichier .module.ts puis sans le fichier
+    * Importer le plugin camera
+    * Utiliser la méthode getPicture
